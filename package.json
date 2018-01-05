@@ -1,0 +1,26 @@
+{
+  "name": "k8s-doc-controller",
+  "version": "1.0.0",
+  "description": "Shows docs and relevant info in regards to OpenShift",
+  "main": "./src/main/js/app.js",
+  "scripts": {
+    "start": "APP_PORT=8000 nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.intern.sparebank1.no:22/k8s/k8s-doc-controller.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.16.2",
+    "pug": "^2.0.0-rc.4",
+    "request": "^2.83.0",
+    "request-promise": "4.2.2",
+    "showdown": "1.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.7"
+  }
+}

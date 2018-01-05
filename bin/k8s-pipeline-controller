@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+CURRENT_DIR=$(dirname "$0")
+
+node ${CURRENT_DIR}/../src/js/app.js
