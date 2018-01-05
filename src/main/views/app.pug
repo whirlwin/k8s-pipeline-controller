@@ -5,7 +5,7 @@ html
   body
     main.container(role="main")
       div.row
-        div.col #
+        div.col-6 #
         div.col
             h1 test
         div.col
@@ -14,9 +14,10 @@ html
             h1 pilot
         div.col
             h1 prod
-      div.row
-        div.col ab1c23 Endre farge på knapp (DIG-123)
-        div.col deploy
-        div.col deploy
-        div.col deploy
-        div.col deploy
+      each deploy in fooAppDeploys
+        div.row
+            div.col-6=deploy.commitHash + " " + deploy.commitMessage
+            div.col deploy
+            div.col deploy
+            div.col deploy
+            div.col deploy
