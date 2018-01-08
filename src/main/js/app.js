@@ -9,17 +9,52 @@ const fooAppDeploys = [
     {
         commitHash: "ab1c23",
         commitMessage: "DIG-123: Endre farge på knapp",
-        status: "not-deployed"
+        status: "not-deployed",
+        deploy: null
     },
     {
         commitHash: "1bace3",
         commitMessage: "DIG-112: Legge til knapp",
-        status: "not-deployed"
+        status: "not-deployed",
+        deploy: null
     },
     {
         commitHash: "c43b11",
         commitMessage: "DIG-100: Legge til tekst",
-        status: "deployed"
+        status: "deployed",
+        deploy: {
+            timestamp: "13-06-2018",
+            destinations: [
+              {
+                clusterName: "prod01.sparebank1.no",
+                pods: [
+                  {
+                    name: "foo-app-ac21",
+                    status: "running"
+                  },
+                  {
+                    name: "foo-app-29bb",
+                    status: "starting"
+                  }
+                ]
+
+              },
+              {
+                clusterName: "prod02.sparebank1.no",
+                pods: [
+                  {
+                    name: "foo-app-ah5c",
+                    status: "running"
+                  },
+                  {
+                    name: "foo-app-923a",
+                    status: "failed"
+                  }
+                ]
+
+              }
+            ],
+        }
     }
 ];
 
