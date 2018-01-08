@@ -5,19 +5,34 @@ html
   body
     main.container(role="main")
       div.row
-        div.col-6 #
-        div.col
+        div.col-3 #
+        div.col-3
             h1 test
-        div.col
-            h1 qa
-        div.col
+        div.col-3
             h1 pilot
-        div.col
+        div.col-3
             h1 prod
-      each deploy in fooAppDeploys
+      each commit in commits
         div.row
-            div.col-6=deploy.commitHash + " " + deploy.commitMessage
-            div.col deploy
-            div.col deploy
-            div.col deploy
-            div.col deploy
+            div.col-3=commit.commitHash + " " + commit.commitMessage
+            div.col-3
+              if commit.environments.test
+                each cluster in commit.environments.test.clusters
+                  b=cluster.name
+                  each pod in cluster.pods
+                    div=pod.name
+              else
+                div deploy
+            div.col-3
+              if commit.environments.pilot
+                each cluster in commit.environments.pilot.clusters
+                  b=cluster.name
+                  each pod in cluster.pods
+                    div=pod.name
+        div.col-3 deploy
+              if commit.environments.prod
+                each cluster in commit.environments.prod.clusters
+                  b=cluster.name
+                  each pod in cluster.pods
+                    div=pod.name
+
