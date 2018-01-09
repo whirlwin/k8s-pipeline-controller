@@ -19,20 +19,35 @@ html
               if commit.environments.test
                 each cluster in commit.environments.test.clusters
                   b=cluster.name
-                  each pod in cluster.pods
-                    div=pod.name
-              else
-                div deploy
+                  if (cluster.pods.length !== 0)
+                    each pod in cluster.pods
+                      div=pod.name
+                  else
+                    btn.btn.btn-primary.btn-sm deploy
             div.col-3
               if commit.environments.pilot
                 each cluster in commit.environments.pilot.clusters
                   b=cluster.name
-                  each pod in cluster.pods
-                    div=pod.name
-        div.col-3 deploy
+                  if (cluster.pods.length !== 0)
+                    each pod in cluster.pods
+                      div=pod.name
+                  else
+                    btn.btn.btn-primary.btn-sm deploy
+            div.col-3
               if commit.environments.prod
                 each cluster in commit.environments.prod.clusters
                   b=cluster.name
-                  each pod in cluster.pods
-                    div=pod.name
-
+                  if (cluster.pods.length !== 0)
+                    each pod in cluster.pods
+                      div=pod.name
+                  else
+                    btn.btn.btn-primary.btn-sm deploy
+        div.row
+          div.col-3
+            hr
+          div.col-3
+            hr
+          div.col-3
+            hr
+          div.col-3
+            hr

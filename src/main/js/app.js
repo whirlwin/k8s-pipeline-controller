@@ -10,13 +10,33 @@ const commits = [{
     commitMessage: "DIG-123: Endre farge på knapp",
     environments: {
         test: {
-            timestamp: null,
             clusters: [{
                 name: "test01.sparebank1.no",
                 pods: [{
                     name: "foo-app-90cca",
                     status: "running"
                 }]
+            }, {
+                name: "test02.sparebank1.no",
+                pods: []
+            }]
+        },
+        pilot: {
+            clusters: [{
+                name: "pilot01.sparebank1.no",
+                pods: []
+            }, {
+                name: "pilot02.sparebank1.no",
+                pods: []
+            }]
+        },
+        prod: {
+            clusters: [{
+                name: "prod01.sparebank1.no",
+                pods: []
+            }, {
+                name: "prod02.sparebank1.no",
+                pods: []
             }]
         }
     }
@@ -24,6 +44,24 @@ const commits = [{
     commitHash: "1bace3",
     commitMessage: "DIG-112: Legge til knapp",
     environments: {
+        test: {
+            clusters: [{
+                name: "test01.sparebank1.no",
+                pods: []
+            }]
+        },
+        pilot: {
+            clusters: [{
+                name: "pilot01.sparebank1.no",
+                pods: []
+            }]
+        },
+        prod: {
+            clusters: [{
+                name: "prod01.sparebank1.no",
+                pods: []
+            }]
+        }
     }
 }, {
     commitHash: "c43b11",
@@ -51,10 +89,10 @@ const commits = [{
                 }]
             }]
         },
-        qa: {
+        pilot: {
             timestamp: "13-06-2018",
             clusters: [{
-                name: "test01.sparebank1.no",
+                name: "pilot01.sparebank1.no",
                 pods: [{
                     name: "foo-app-ac21",
                     status: "running"
@@ -63,7 +101,7 @@ const commits = [{
                     status: "starting"
                 }]
             }, {
-                name: "test02.sparebank1.no",
+                name: "pilot02.sparebank1.no",
                 pods: [{
                     name: "foo-app-ah5c",
                     status: "running"
@@ -110,4 +148,4 @@ app.get("/healthcheck", (req, res) => {
     res.send(200);
 });
 
-app.listen(APP_PORT, () => console.log("k8s-doc-controller listening on port " + APP_PORT));
+app.listen(APP_PORT, () => console.log("k8s-pipeline-controller listening on port " + APP_PORT));

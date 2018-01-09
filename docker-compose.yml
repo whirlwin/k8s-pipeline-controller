@@ -1,5 +1,5 @@
-k8s-doc-controller:
-  container_name: k8s-doc-controller-1
+k8s-pipeline-controller:
+  container_name: k8s-pipeline-controller-1
   build: .
   ports:
    - "8000:8000"

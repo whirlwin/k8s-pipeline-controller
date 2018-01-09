@@ -1,5 +1,5 @@
 {
-  "name": "k8s-doc-controller",
+  "name": "k8s-pipeline-controller",
   "version": "1.0.0",
   "description": "Shows docs and relevant info in regards to OpenShift",
   "main": "./src/main/js/app.js",
@@ -8,8 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "ssh://git@stash.intern.sparebank1.no:22/k8s/k8s-doc-controller.git"
+    "type": "git"
   },
   "author": "",
   "license": "ISC",
