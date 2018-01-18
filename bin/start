@@ -4,4 +4,4 @@ set -e
 
 CURRENT_DIR=$(dirname "$0")
 
-node ${CURRENT_DIR}/../src/js/app.js
+node ${CURRENT_DIR}/../src/main/js/app.js
