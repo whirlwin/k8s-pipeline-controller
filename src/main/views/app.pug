@@ -5,7 +5,7 @@ html
   body
     main.container(role="main")
       div.row
-        div.col-3 #
+        div.col-3 &nbsp;
         div.col-3
             h1 test
         div.col-3
@@ -15,33 +15,51 @@ html
       each commit in commits
         div.row
             div.col-3=commit.commitHash + " " + commit.commitMessage
+
             div.col-3
               if commit.environments.test
                 each cluster in commit.environments.test.clusters
-                  b=cluster.name
-                  if (cluster.pods.length !== 0)
-                    each pod in cluster.pods
-                      div=pod.name
-                  else
-                    btn.btn.btn-primary.btn-sm deploy
+                  div.card
+                    div.card-body
+                      strong.card-title="cluster " + cluster.name
+                      if (cluster.pods.length !== 0)
+                        each pod in cluster.pods
+                          div
+                            span pod &nbsp;
+                            span=pod.name
+                      else
+                        div
+                          btn.btn.btn-primary.btn-sm deploy
+
             div.col-3
               if commit.environments.pilot
                 each cluster in commit.environments.pilot.clusters
-                  b=cluster.name
-                  if (cluster.pods.length !== 0)
-                    each pod in cluster.pods
-                      div=pod.name
-                  else
-                    btn.btn.btn-primary.btn-sm deploy
+                  div.card
+                    div.card-body
+                      strong.card-title="cluster " + cluster.name
+                      if (cluster.pods.length !== 0)
+                        each pod in cluster.pods
+                          div
+                            span pod &nbsp;
+                            span=pod.name
+                      else
+                        div
+                          btn.btn.btn-primary.btn-sm deploy
+
             div.col-3
               if commit.environments.prod
                 each cluster in commit.environments.prod.clusters
-                  b=cluster.name
-                  if (cluster.pods.length !== 0)
-                    each pod in cluster.pods
-                      div=pod.name
-                  else
-                    btn.btn.btn-primary.btn-sm deploy
+                  div.card
+                    div.card-body
+                      strong.card-title="cluster " + cluster.name
+                      if (cluster.pods.length !== 0)
+                        each pod in cluster.pods
+                          div
+                            span pod &nbsp;
+                            span=pod.name
+                      else
+                        div
+                          btn.btn.btn-primary.btn-sm deploy
         div.row
           div.col-3
             hr
