@@ -20,4 +20,4 @@ RUN npm install
 COPY bin ${HOME}/bin
 COPY src ${HOME}/src
 
-CMD ["./bin/k8s-pipeline-controller"]
+CMD ["./bin/start"]
