@@ -131,7 +131,7 @@
         "timestamp":"13-06-2018",
         "clusters":[
           {
-            "name":"pilot01.sparebank1.no",
+            "name":"sb1",
             "pods":[
               {
                 "name":"foo-app-ac21",
@@ -144,7 +144,7 @@
             ]
           },
           {
-            "name":"sb1",
+            "name":"bf",
             "pods":[
               {
                 "name":"foo-app-ah5c",
@@ -175,7 +175,7 @@
             ]
           },
           {
-            "name":"test02.sparebank1.no",
+            "name":"bf",
             "pods":[
               {
                 "name":"foo-app-ah5c",
