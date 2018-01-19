@@ -11,7 +11,7 @@ LABEL sb1.healthcheck.path=/healthcheck/ \
       sb1.k8s.appname=k8s-pipeline-controller \
       sb1.k8s.port=${APP_PORT} \
       sb1.k8s.apptype=simple-v1 \
-      sb1.k8s.path='["/"]'
+      sb1.k8s.path='["[\"/pipeline\"]"]'
 
 COPY package.json ${HOME}
 
