@@ -1,3 +1,4 @@
+FROM nodejs
 
 ENV HOME=/opt/k8s-pipeline-controller \
     APP_PORT=8000
